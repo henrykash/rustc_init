@@ -21,13 +21,26 @@ fn main() {
 
     /*create mutable growable string on heap */
     let mut name2: String = String::new();
-    name2 = name2+ "enginer";
+    name2 = name2 + "enginer";
     name2.push_str(" man");
 
-    println!("{} ", name2);
+    // println!("{} ", name2);
 
-    /* string slices: a mutable portion of the string */
+    /* string slices: an immutable portion of the string */
 
+    let name3: &str = &name1[..8];
+    let name4: &str = &name1[9..];
+
+    
+    println!("{} {}", name3, name4);
+
+    /*loop over characters */
+
+
+
+for c in name2.chars(){
+    println!("{}", c);
+}
 
 
 }
