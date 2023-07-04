@@ -2,6 +2,7 @@ fn main() {
     println!("Hello, world!");
    printing::goodbye();
    printing::time_stuff::give_us_the_time();
+   printing::time_stuff::give_us_the_time2();
 }
 
 
@@ -9,12 +10,7 @@ fn main() {
 mod printing{
 
    //nestting modules help in organizing related functionality
-   pub mod time_stuff {
-        pub fn give_us_the_time() {
-            println!("The current time is: {}", chrono::Local::now());
-        }
-        
-    }
+   pub mod time_stuff;
    pub fn goodbye() {
         println!("Goodbye, world!");
     }
