@@ -18,7 +18,7 @@ fn main() {
     let name1: &'static str = "\nEgineer kash"; //this string can not be modified only read
 
     println!("{} ", name1);
-
+ 
     /*create mutable growable string on heap */
     let mut name2: String = String::new();
     name2 = name2 + "enginer";
@@ -35,7 +35,6 @@ fn main() {
     println!("{} {}", name3, name4);
 
     /*loop over characters */
-
 for c in name2.chars(){
     println!("{}", c);
 }
