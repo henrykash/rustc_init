@@ -26,7 +26,7 @@ fn main() {
 
     // println!("{} ", name2);
 
-    /* string slices: an immutable portion of the string */
+    /* string slices: an immutable portion of the string */   
 
     let name3: &str = &name1[..8];
     let name4: &str = &name1[9..];
@@ -35,8 +35,6 @@ fn main() {
     println!("{} {}", name3, name4);
 
     /*loop over characters */
-
-
 
 for c in name2.chars(){
     println!("{}", c);
