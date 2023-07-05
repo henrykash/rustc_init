@@ -19,11 +19,32 @@ fn main() {
 
     //turples
     let x_and_y = (x, y);
-    println!("x_and_y = {:?}", x_and_y); // ? is for debug
+    println!("\nx_and_y = {:?}", x_and_y); // ? is for debug
 
     let x = x_and_y.0;
     let y = x_and_y.1;
-
     print!("x = {}, y = {}", x, y);
+
+    // Arrays 
+    let x_and_y = [x, y as f64];
+
+    println!("\nx_and_y = {:?}", x_and_y); // ? is for debug
+
+    let x = x_and_y[0];
+    let y = x_and_y[1];
+    print!("x = {}, y = {}", x, y);
+
+    //srtructs
+    #[derive(Debug)]
+    struct Secrets {
+        x: f64,
+        y: f64,
+    }
+
+    let x_and_y = Secrets { x, y };
+    println!("\nx_and_y = {:?}", x_and_y); // ? is for debug
+    print!("x = {}, y = {}", x_and_y.x, x_and_y.y);
+
+
  }
   
