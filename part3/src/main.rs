@@ -27,8 +27,7 @@ fn main() {
 
     // Arrays 
     // what are arrays?
-    // arrays are a way to define a type by giving a name to a collection of fields of other types.
-    
+    // arrays are a way to define a type by giving a name to a collection of fields of other types. 
     let x_and_y = [x, y as f64];
 
     println!("\nx_and_y = {:?}", x_and_y); // ? is for debug
