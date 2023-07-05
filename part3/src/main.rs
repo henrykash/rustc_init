@@ -26,6 +26,9 @@ fn main() {
     print!("x = {}, y = {}", x, y);
 
     // Arrays 
+    // what are arrays?
+    // arrays are a way to define a type by giving a name to a collection of fields of other types.
+    
     let x_and_y = [x, y as f64];
 
     println!("\nx_and_y = {:?}", x_and_y); // ? is for debug
@@ -35,7 +38,10 @@ fn main() {
     print!("x = {}, y = {}", x, y);
 
     //srtructs
+    //what are structs?
+    //structs are a way to define a type by giving a name to a collection of fields of other types.
     #[derive(Debug)]
+
     struct Secrets {
         x: f64,
         y: f64,
@@ -44,6 +50,21 @@ fn main() {
     let x_and_y = Secrets { x, y };
     println!("\nx_and_y = {:?}", x_and_y); // ? is for debug
     print!("x = {}, y = {}", x_and_y.x, x_and_y.y);
+
+    //enums
+    //what are enums? 
+    //enums are a way to define a type by enumerating its possible variants.
+
+    #[allow(dead_code)]
+    #[derive(Debug)]
+    enum Fruits {
+        Apple,
+        Mango,
+        Banana,
+    }
+
+    let fruit = Fruits::Mango;
+    println!("\nfruit = {:?}", fruit); // ? is for debug
 
 
  }
