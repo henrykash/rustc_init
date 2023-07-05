@@ -35,9 +35,9 @@ fn fin(n: i32) -> i32 {
 //         if x < n {
 //             break;
 //         }
-//     break
+//     break b; // return b the value of the overal loop
 //     }
-//     return b;
+//  
 // }
 
 
