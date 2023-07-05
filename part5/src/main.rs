@@ -20,7 +20,7 @@ fn fin(n: i32) -> i32 {
             let next = a + b; // next number in the series
             a = b;
             b = next;
-            x = x + 1;
+            x += 1;
         }
         return b;
     }
