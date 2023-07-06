@@ -1,8 +1,6 @@
 use model::Hands;
 mod model {
     use std::fmt::Display;
-
-
     //trait is a collection of methods that can be implemented by any type
     pub trait Displayable {
         fn display(&self) -> String;
