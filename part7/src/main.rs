@@ -1,6 +1,9 @@
 use model::Hands;
+use std::fmt::Display;
 
 mod model {
+    use std::fmt::Display;
+
 
     //trait is a collection of methods that can be implemented by any type
     pub trait Displayable {
@@ -14,15 +17,16 @@ mod model {
         Orange,
     }
 
-    impl Displayable for Fruit {
-        // display() is a method of the Fruit enum type (self is the enum instance)
-        fn display(&self) -> String {
-            match self {
-                Fruit::Apple => String::from("Apple"),
-                Fruit::Banana => String::from("Banana"),
-                _ => String::from("Orange"), // _ is a catch-all pattern (like default in a switch)
-            }
-        }
+    impl Display for Fruit {
+
+        //use a borrowed formatter object to turn the fruit object into a string
+         fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
+             match self {
+                 Fruit::Apple => f.write_str("Apple"),
+                 Fruit::Banana => f.write_str("Banana"),
+                 _ => f.write_str("Orange"),
+             }
+         }
     }
 
     #[allow(dead_code)]
@@ -40,8 +44,8 @@ mod model {
     impl Hands {
         pub fn new() -> Self {
             Hands {
-                left: Option::Some(Fruit::Apple),
-                right: Option::Some(Fruit::Banana),
+                left: Some(Fruit::Apple),
+                right: Some(Fruit::Banana),
             }
         }
 
@@ -54,22 +58,21 @@ mod model {
             return self;
         }
         pub fn report(&self) {
-             report_item(&self.left, "Left");
-             report_item(&self.right, "Right");
+            report_item(&self.left, "Left");
+            report_item(&self.right, "Right");
         }
     }
-    // T is a type parameter (generic type) that implements the Displayable trait (T: Displayable)
-    
-        fn report_item<T: Displayable> (item: &Option<T>, which: &str) {
-            match item {
-                Option::Some(what) => {
-                    println!("\n{} hand is holding {} ", which, what.display());
-                }
-                _ => {
-                    println!("\n{} hand is empty", which);
-                }
+
+    // Displayable is a trait that can be implemented by any type (T is a type parameter)
+    fn report_item<T: Display >(item: &Option<T>, which: &str) {
+        match item {
+            Some(what) => {
+                println!("\n{} hand is holding {} ", which, what);
             }
-        
+            _ => {
+                println!("\n{} hand is empty", which);
+            }
+        }
     }
 }
 
