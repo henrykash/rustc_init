@@ -59,7 +59,7 @@ mod model {
         }
     }
 
-    // Displayable is a trait that can be implemented by any type (T is a type parameter)
+    // Display is a trait that can be implemented by any type (T is a type parameter)
     fn report_item<T: Display >(item: &Option<T>, which: &str) {
         match item {
             Some(what) => {
