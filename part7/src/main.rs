@@ -1,6 +1,4 @@
 use model::Hands;
-use std::fmt::Display;
-
 mod model {
     use std::fmt::Display;
 
@@ -29,7 +27,7 @@ mod model {
          }
     }
 
-    #[allow(dead_code)]
+   
     // Item is a generic enum type (T is a type parameter): a pattern that can be instantiated with different types
     // pub enum Item<T> {
     //     Something(T), //string owned by the item
