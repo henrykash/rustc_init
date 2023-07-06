@@ -128,7 +128,13 @@ fn main() {
     Hands::report(&hands); // call report() with a reference to hands
 
      // create a new student into the student struct
-    let mut student = model::StudentDetails::new(String::from("John"), 20, 80, 'A');
+
+     let name = String::from("John");
+        let age = 20;
+        let marks = 80;
+        let grade = 'A';
+        
+    let mut student = model::StudentDetails::new(String::from(name),  age, marks, grade);
     println!(
         "\nStudent name is {} and age is {} and marks is {} ",
         student.name, student.age, student.marks
