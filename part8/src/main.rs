@@ -1,4 +1,4 @@
-use std::collections::{HashMap, VecDeque, BTreeMap};
+use std::collections::{HashMap, VecDeque, BTreeMap, HashSet};
 
 fn main() {
     // VECTORS : vector provides dynamic array of a given type: List
@@ -52,7 +52,7 @@ fn main() {
         println!("{:?}at {}", key, value);
     }
 
-     // BTREEMAP: used to store key-value pairs in a B-tree implementation of a map data structure: does not require the keys to be hashable
+     // BTREEMAP: used to store key-value pairs in a B-tree implementation of a map data structure: the keys are sorted in ascending order not hash order
     let mut grid = BTreeMap::new();
     grid.insert((2, 3), "man");
     grid.insert((5, 7), "woman");
@@ -74,5 +74,17 @@ fn main() {
     //iterating through a a BTreeMap using a for loop
     for (key, value) in &grid {
         println!("{:?}at {}", key, value);
+    }
+
+
+    //HASHSET 
+    let mut primes = HashSet::new();
+    primes.insert(2);
+    primes.insert(3);
+    primes.insert(5);
+
+    //iterating through a a HashSet using a for loop
+    for p in &primes {
+        println!("Prime: {}", p);
     }
 }
