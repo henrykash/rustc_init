@@ -1,4 +1,4 @@
-use std::collections::{HashMap, VecDeque, BTreeMap, HashSet};
+use std::collections::{HashMap, VecDeque, BTreeMap, HashSet, BinaryHeap};
 
 fn main() {
     // VECTORS : vector provides dynamic array of a given type: List
@@ -87,4 +87,16 @@ fn main() {
     for p in &primes {
         println!("Prime: {}", p);
     }
+
+    //BINARY HEAP: used to store a collection of values in a heap data structure: the values are stored in a binary tree and the parent node is always greater than the child nodes
+    let mut heap = BinaryHeap::new();
+    heap.push(2);
+    heap.push(3);
+    heap.push(5);
+
+    //iterating through a a BinaryHeap using a while let loop: the values are returned in descending order
+    while let Some(p) = heap.pop() {
+        println!("BinaryHeap: {}", p);
+    }
+    
 }
