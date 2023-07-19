@@ -30,9 +30,19 @@ impl<'a> Iterator for OurIterator<'a> {
 }
 
 fn main() {
-    let nums = vec![1, 2, 3];
-    let mut iter = OurIterator::new(&nums, 2);
-    while let Some(num) = iter.next() {
+    let mut nums = vec![1, 2, 3];
+    let mut nums2 = OurIterator::new(&nums, 2);
+    let mut nums3 = OurIterator::new(&nums, 3);
+
+    while let Some(num) = nums2.next() {
         println!("{}", num);
     }
+
+    while let Some(num) = nums3.next() {
+        println!("{}", num);
+    }
+
+   let _push = nums.push(4);
+
+    print!("nums: {:?}", nums);
 }
